@@ -1,0 +1,21 @@
+{
+  "name": "Tera - Social Media Platform",
+  "short_name": "Tera",
+  "description": "A modern social media platform where you can connect with friends, share your thoughts, and engage with content that matters to you.",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/logo.jpeg",
+      "sizes": "32x32",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.ico",
+      "sizes": "16x16 32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
