@@ -26,13 +26,12 @@ const nextConfig = {
     }
     return config;
   },
-  transpilePackages: ['pusher-js'],
+  transpilePackages: ['pusher-js', 'pusher'],
   experimental: {
     optimizePackageImports: ['@uploadthing/react', '@tiptap/react'],
     serverActions: {
       bodySizeLimit: '2mb'
-    },
-    serverComponentsExternalPackages: ['pusher']
+    }
   }
 }
 
