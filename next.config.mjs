@@ -16,8 +16,7 @@ const nextConfig = {
     optimizePackageImports: ['@uploadthing/react', '@tiptap/react'],
     serverActions: {
       bodySizeLimit: '2mb'
-    },
-    serverComponentsExternalPackages: ['pusher', 'pusher-js']
+    }
   },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
