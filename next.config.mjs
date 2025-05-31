@@ -19,13 +19,10 @@ const nextConfig = {
     }
   },
   webpack: (config, { isServer }) => {
-    // Force Pusher to be bundled on the server side
-    if (isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        net: false,
-        tls: false,
-        fs: false,
+    if (!isServer) {
+      // Don't bundle pusher-js on the client to prevent issues
+      config.resolve.alias = {
+        ...config.resolve.alias,
         'pusher-js': false
       };
     }
