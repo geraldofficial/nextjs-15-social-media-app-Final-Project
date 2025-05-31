@@ -4,5 +4,8 @@
       "path": "/api/clear-uploads",
       "schedule": "0 2 * * *"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs"
 }
