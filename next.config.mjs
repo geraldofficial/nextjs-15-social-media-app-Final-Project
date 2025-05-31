@@ -12,6 +12,12 @@ const nextConfig = {
       }
     ]
   },
+  experimental: {
+    optimizePackageImports: ['@uploadthing/react', '@tiptap/react'],
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
+  },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -25,13 +31,6 @@ const nextConfig = {
       };
     }
     return config;
-  },
-  experimental: {
-    optimizePackageImports: ['@uploadthing/react', '@tiptap/react'],
-    serverActions: {
-      bodySizeLimit: '2mb'
-    },
-    serverComponentsExternalPackages: ['pusher', 'pusher-js']
   }
 }
 
