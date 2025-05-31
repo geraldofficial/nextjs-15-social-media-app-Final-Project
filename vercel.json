@@ -4,5 +4,7 @@
       "path": "/api/clear-uploads",
       "schedule": "0 2 * * *"
     }
-  ]
+  ],
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "installCommand": "npm install --legacy-peer-deps"
 }
