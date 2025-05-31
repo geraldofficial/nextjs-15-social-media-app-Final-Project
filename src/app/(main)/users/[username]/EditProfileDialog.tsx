@@ -199,7 +199,7 @@ export default function EditProfileDialog({
               />
             </fieldset>
             <DialogFooter>
-              <LoadingButton type="submit" loading={mutation.isPending}>
+              <LoadingButton type="submit" loading={mutation.isLoading}>
                 Save
               </LoadingButton>
             </DialogFooter>

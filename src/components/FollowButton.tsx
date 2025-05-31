@@ -25,7 +25,7 @@ export default function FollowButton({
 
   const queryKey: QueryKey = ["follower-info", username];
 
-  const { mutate, isPending } = useMutation({
+  const { mutate, isLoading } = useMutation({
     mutationFn: async () => {
       const method = initialState.isFollowedByUser ? "DELETE" : "POST";
       await kyInstance(
@@ -63,10 +63,10 @@ export default function FollowButton({
   return (
     <Button
       variant={data.isFollowedByUser ? "secondary" : "default"}
-      disabled={isPending}
+      disabled={isLoading}
       onClick={() => mutate()}
     >
-      {isPending ? (
+      {isLoading ? (
         <Loader2 className="mr-2 size-4 animate-spin" />
       ) : null}
       {data.isFollowedByUser ? "Unfollow" : "Follow"}

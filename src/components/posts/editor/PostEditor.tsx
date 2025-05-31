@@ -124,7 +124,7 @@ export default function PostEditor() {
         </div>
         <LoadingButton
           onClick={onSubmit}
-          loading={mutation.isPending}
+          loading={mutation.isLoading}
           disabled={!input.trim() || isUploading}
           className="min-w-20"
         >

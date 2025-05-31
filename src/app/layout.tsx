@@ -62,8 +62,6 @@ export const metadata: Metadata = {
     description: "Join Tera to connect with friends, share your thoughts, and engage with content that matters to you.",
     images: ["/og-image.png"],
   },
-  manifest: "/site.webmanifest",
-  manifest: "/site.webmanifest",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
     { media: "(prefers-color-scheme: dark)", color: "#000000" },

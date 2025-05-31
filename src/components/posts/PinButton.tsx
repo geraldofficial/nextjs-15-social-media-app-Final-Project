@@ -41,7 +41,7 @@ export default function PinButton({ post }: PinButtonProps) {
   return (
     <button
       onClick={() => mutation.mutate()}
-      disabled={mutation.isPending}
+      disabled={mutation.isLoading}
       className={`flex items-center gap-1.5 text-sm font-medium ${
         isPinned ? "text-primary" : "text-muted-foreground hover:text-primary"
       }`}
