@@ -1,10 +1,11 @@
 'use client';
 
-let PusherClient: any;
+import dynamic from 'next/dynamic';
 
-if (typeof window !== 'undefined') {
-  PusherClient = require('pusher-js');
-}
+const PusherClient = dynamic(
+  () => import('pusher-js').then((mod) => mod.default),
+  { ssr: false }
+);
 
 export const pusherClient = typeof window !== 'undefined'
   ? new PusherClient(
