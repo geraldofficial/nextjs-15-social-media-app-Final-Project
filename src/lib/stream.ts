@@ -1,8 +1,11 @@
 import { StreamChat } from "stream-chat";
-import PusherServer from "pusher";
-import PusherClient from "pusher-js";
+import 'server-only';
 
-export const pusherServer = new PusherServer({
+// Import Pusher only on server side
+import Pusher from 'pusher';
+import PusherClient from 'pusher-js';
+
+export const pusherServer = new Pusher({
   appId: process.env.PUSHER_APP_ID!,
   key: process.env.NEXT_PUBLIC_PUSHER_KEY!,
   secret: process.env.PUSHER_SECRET!,
