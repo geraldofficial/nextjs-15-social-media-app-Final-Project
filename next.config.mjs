@@ -16,8 +16,7 @@ const nextConfig = {
     optimizePackageImports: ['@uploadthing/react', '@tiptap/react'],
     serverActions: {
       bodySizeLimit: '2mb'
-    },
-    serverComponentsExternalPackages: ['pusher']
+    }
   },
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
@@ -31,9 +30,15 @@ const nextConfig = {
         'supports-color': false,
       };
     }
+
+    // Add module resolution for Pusher packages
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'pusher': isServer ? 'pusher' : 'pusher-js'
+    };
+
     return config;
-  },
-  transpilePackages: ['pusher-js']
+  }
 }
 
 export default nextConfig
