@@ -19,14 +19,22 @@ const nextConfig = {
     }
   },
   webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
     if (!isServer) {
-      // Don't bundle pusher-js on the client to prevent issues
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'pusher-js': false
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+        dns: false,
+        'supports-color': false,
       };
     }
     return config;
+  },
+  transpilePackages: ['pusher-js', 'pusher'],
+  experimental: {
+    serverComponentsExternalPackages: ['pusher']
   }
 }
 

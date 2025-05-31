@@ -1,5 +1,5 @@
 'use server';
 
-import { pusher as pusherServer } from '../app/api/pusher/route';
+import { pusherServer, trigger } from '@/app/actions/pusher';
 
-export { pusherServer };
+export { pusherServer, trigger };

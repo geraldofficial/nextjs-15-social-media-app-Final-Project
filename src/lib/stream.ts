@@ -13,5 +13,6 @@ export const streamServerClient = StreamChat.getInstance(
   process.env.STREAM_SECRET
 );
 
-// Export pusher instances
-export { pusherServer, pusherClient };
+// Export pusher instances with type safety
+export { pusherServer };
+export { pusherClient };
